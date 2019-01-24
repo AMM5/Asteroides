@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplication4</string>
+    <string name="jugar">Play</string>
+    <string name="Configurar">Configuration</string>
+    <string name="acercaDe">About</string>
+    <string name="salir">Exit</string>
+    <string name="text_acercade">This application has been developed as
+     example in the Web Interface Design module to demonstrate how they can be launched
+     new activities from the main activity</string>
+    <string name="acercade">About...</string>
+    <string name="menuConfig">Configuration</string>
+    <string name="menucercade">Search</string>
+    <string name="configuracion">Configuration</string>
+    <string name="pa1_title">Play Music</string>
+    <string name="pa1_key">Music</string>
+    <string name="pa1_summary">Background music is played</string>
+    <string name="pa2_title">Type of graphics</string>
+    <string name="pa2_key">Graphics</string>
+    <string name="pa2_summary">The representation of the graphics is chosen</string>
+    <string name="pa3_title">Number of fragments</string>
+    <string name="pa3_key">Fragments</string>
+    <string name="pa3_summary">In how many pieces an asteroid is divided</string>
+    <string name="multijugador_title">Modo Mutijugador</string>
+    <string name="multijugador_key">Multijugador</string>
+    <string name="activarMulti_title">Activar modo multijugador</string>
+    <string name="maximoJugadores_key">JugadoresMax</string>
+    <string name="jugadoresMax_title">Máximo de jugadores</string>
+    <string name="conexion_title">Tipo de conexión</string>
+    <string name="textoError1">Ha de ser un número</string>
+    <string name="textoAsteroide1">En cuantos trozos se divide un asteroide (</string>
+    <string name="textoMaximoFragmentos">Máximo de fragmentos 9</string>
+    <string name="conexion_key">TipoConexion</string>
+    <string name="pa4_title">Activar Sensores</string>
+    <string name="pa4_key">sensores</string>
+    <string name="pa4_summary">Activación de sensores</string>
+</resources>

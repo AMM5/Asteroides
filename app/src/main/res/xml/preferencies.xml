@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="@string/pa1_key"
+        android:summary="@string/pa1_summary"
+        android:title="@string/pa1_title" />
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/tipusGrafics"
+        android:entryValues="@array/tipusGraficsValors"
+        android:key="@string/pa2_key"
+        android:summary="@string/pa2_summary"
+        android:title="@string/pa2_title" />
+    <EditTextPreference
+        android:defaultValue="3"
+        android:key="@string/pa3_key"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="@string/pa3_summary"
+        android:title="@string/pa3_title" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="@string/pa4_key"
+        android:summary="@string/pa4_summary"
+        android:title="@string/pa4_title" />
+    <PreferenceCategory android:title="@string/multijugador_title">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/multijugador_key"
+            android:title="@string/activarMulti_title" />
+        <EditTextPreference
+            android:defaultValue="1"
+            android:key="@string/maximoJugadores_key"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/jugadoresMax_title" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/tipoConexion"
+            android:entryValues="@array/tiposConexionValores"
+            android:key="@string/conexion_key"
+            android:title="@string/conexion_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

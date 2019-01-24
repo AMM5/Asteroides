@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplicacio4</string>
+    <string name="jugar">Jugar</string>
+    <string name="Configurar">Configuració</string>
+    <string name="acercaDe">Sobre que</string>
+    <string name="salir">Sortir</string>
+    <string name="text_acercade">Aquesta aplicacio ha estat desenvolupada com
+     exemple en el modul de Disseny d\'Interficies Web per demostrar com es poden llançar
+     noves activitats des de l\'activitat principal</string>
+    <string name="acercade">Sobre...</string>
+    <string name="menuConfig">Configuracio</string>
+    <string name="menucercade">Cercar</string>
+    <string name="configuracion">Configuracio</string>
+    <string name="pa1_title">Reproducir música</string>
+    <string name="pa1_key">Musica</string>
+    <string name="pa1_summary">Es reprodueix música de fons</string>
+    <string name="pa2_title">Tipo de grafic</string>
+    <string name="pa2_key">Grafic</string>
+    <string name="pa2_summary">S\'escull la representació dels gràfic</string>
+    <string name="pa3_title">Nombre de fragments</string>
+    <string name="pa3_key">Fragments</string>
+    <string name="pa3_summary">En quants trossos es divideix un asteroide</string>
+    <string name="multijugador_title">Modo Mutijugador</string>
+    <string name="multijugador_key">Multijugador</string>
+    <string name="activarMulti_title">Activar modo multijugador</string>
+    <string name="maximoJugadores_key">JugadoresMax</string>
+    <string name="jugadoresMax_title">Máximo de jugadores</string>
+    <string name="conexion_title">Tipo de conexión</string>
+    <string name="textoError1">Ha de ser un número</string>
+    <string name="textoAsteroide1">En cuantos trozos se divide un asteroide (</string>
+    <string name="textoMaximoFragmentos">Máximo de fragmentos 9</string>
+    <string name="conexion_key">TipoConexion</string>
+    <string name="pa4_title">Activar Sensores</string>
+    <string name="pa4_key">sensores</string>
+    <string name="pa4_summary">Activación de sensores</string>
+</resources>
