@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         sortida = (TextView)findViewById(R.id.textView2);
 
         //Música
-       /* mp = MediaPlayer.create(this, R.raw.audio);
+        /*mp = MediaPlayer.create(this, R.raw.audio);
         mp.start();*/
     }
 
@@ -219,12 +219,14 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         super.onStop();
         Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
        // mp.pause();
+        stopService(new Intent(MainActivity.this, ServeiMusica.class));
     }
 
     @Override protected void onRestart() {
         super.onRestart();
         Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
        // mp.start();
+        startService(new Intent(MainActivity.this, ServeiMusica.class));
     }
 
     @Override protected void onDestroy() {
