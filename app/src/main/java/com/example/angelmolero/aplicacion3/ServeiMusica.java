@@ -28,9 +28,9 @@ public class ServeiMusica extends Service {
         super.onStartCommand(intent, flags, idArranc);
         //Creació de la notificació
         Notification.Builder notificacio = new Notification.Builder(this)
-                .setContentTitle("Creant Servei de Música")//titol que descriu la notificació
+                .setContentTitle("Himno del Sevilla")//titol que descriu la notificació
                 .setSmallIcon(R.mipmap.ic_launcher)//icono a visualitzar
-                .setContentText("Informació adicional") //Informació més detallada
+                .setContentText("Reproduciendo música de inicio") //Informació més detallada
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.R.drawable.ic_media_play))
                 .setWhen(System.currentTimeMillis()+1000*60*60)
                 .setContentInfo("més info")

@@ -38,6 +38,8 @@ public class MainActivity extends Activity implements View.OnClickListener, View
 
     public  static MagatzemPuntuacions magatzem = new MagatzemPuntuacionsArray();
 
+    private SharedPreferences pref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,14 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         //Música
         /*mp = MediaPlayer.create(this, R.raw.audio);
         mp.start();*/
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
+        if (pref.getBoolean(getResources().getString(R.string.pa1_key), true)) {
+            // mp.start();
+            startService(new Intent(MainActivity.this, ServeiMusica.class));
+        } else {
+            // mp.pause();
+            stopService(new Intent(MainActivity.this, ServeiMusica.class));
+        }
     }
 
     @Override
@@ -108,7 +118,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
     }
 
     public String mostrarPreferencies(View view) {
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
         String s = "música "+pref.getBoolean(getResources().getString(R.string.pa1_key), false)+
                     "\ntipo de Grafico "+pref.getString(getResources().getString(R.string.pa2_key),"1")+
                     "\nnúmero de fragmentos "+pref.getString(getResources().getString(R.string.pa3_key),"3")+
@@ -201,17 +211,20 @@ public class MainActivity extends Activity implements View.OnClickListener, View
     @Override protected void onResume() {
         super.onResume();
         Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-        /*if (pref.getBoolean(getResources().getString(R.string.pa1_key), true)) {
-            mp.start();
+
+       /* if (pref.getBoolean(getResources().getString(R.string.pa1_key), true)) {
+           // mp.start();
+            startService(new Intent(MainActivity.this, ServeiMusica.class));
         } else {
-            mp.pause();
+           // mp.pause();
+            stopService(new Intent(MainActivity.this, ServeiMusica.class));
         }*/
     }
 
     @Override protected void onPause() {
         Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
         super.onPause();
+        //stopService(new Intent(MainActivity.this, ServeiMusica.class));
        // mp.pause();
     }
 
@@ -219,18 +232,17 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         super.onStop();
         Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
        // mp.pause();
-        stopService(new Intent(MainActivity.this, ServeiMusica.class));
     }
 
     @Override protected void onRestart() {
         super.onRestart();
         Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
        // mp.start();
-        startService(new Intent(MainActivity.this, ServeiMusica.class));
     }
 
     @Override protected void onDestroy() {
         Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
+        stopService(new Intent(MainActivity.this, ServeiMusica.class));
         super.onDestroy();
     }
 }

@@ -1,6 +1,7 @@
 package com.example.angelmolero.aplicacion3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -378,6 +379,14 @@ public class VistaJoc extends View implements SensorEventListener {
         asteroides.remove(i);
        // missilActiu = false;
        // mpExplosio.start();
+      /*  if (pref.getBoolean(getResources().getString(R.string.pa1_key), true)) {
+            // mp.start();
+            startService(new Intent(VistaJoc.this, ServeiMusica.class));
+        } else {
+            // mp.pause();
+            stopService(new Intent(VistaJoc.this, ServeiMusica.class));
+        }*/
+
         if (pref.getBoolean(getResources().getString(R.string.pa1_key), true)) {
             soundPool.play(idExplosio, 1, 1, 0, 0, 1);
         }
