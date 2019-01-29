@@ -78,6 +78,8 @@ public class MainActivity extends Activity implements View.OnClickListener, View
             // mp.pause();
             stopService(new Intent(MainActivity.this, ServeiMusica.class));
         }
+
+        magatzem = new MagatzemPuntuacionsPreferencies(this);
     }
 
     @Override
@@ -106,7 +108,22 @@ public class MainActivity extends Activity implements View.OnClickListener, View
     public void llancarJoc(View view) {
         Intent i = new Intent(this, Joc.class);
         //Llançar una activitat mitjançant un objecte Intenció.
-        startActivity(i);
+        startActivityForResult(i, 1234);
+    }
+
+    //Mètode que es crida de forma automàtica quan finalitza
+    //l'activitat secundària. Permet llegir les dades retornades.
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==1234 && resultCode==RESULT_OK && data!=null) {
+            int puntuacio = data.getExtras().getInt("puntuacio");
+            String nom = "Jo";
+            //Millor si ho llegim des d'un diàleg o una nova activitat
+            //AlertDialog.Builder
+            magatzem.guardarPuntuacio(puntuacio, nom, System.currentTimeMillis());
+            llancarPuntuacions(null);
+        }
     }
 
     //Mètode que s'executa quean pitjam boto4

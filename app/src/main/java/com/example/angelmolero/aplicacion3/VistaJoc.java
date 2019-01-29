@@ -1,5 +1,6 @@
 package com.example.angelmolero.aplicacion3;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +19,7 @@ import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
+import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
@@ -81,6 +83,13 @@ public class VistaJoc extends View implements SensorEventListener {
 
     //Sensores
     private SensorManager mSensorManager;
+
+    //Puntuación
+    //Variable que conté la puntuació del joc
+    private int puntuacio = 0;
+
+    //Objecte que permet accedir a l'activitat que crida al Layout.
+    private Activity pare;
 
     public VistaJoc(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -391,6 +400,12 @@ public class VistaJoc extends View implements SensorEventListener {
         if (pref.getBoolean(getResources().getString(R.string.pa1_key), true)) {
             soundPool.play(idExplosio, 1, 1, 0, 0, 1);
         }
+
+        puntuacio += 1000;
+        //Si un asteroide choca amb la nau finalitzar joc
+        if (asteroides.isEmpty()) {
+            sortir();
+        }
     }
 
     private void ActivaMissil() {
@@ -430,5 +445,19 @@ public class VistaJoc extends View implements SensorEventListener {
 
     public SensorManager getmSensorManager() {
         return mSensorManager;
+    }
+
+    public void setPare(Activity pare) {
+        this.pare = pare;
+    }
+
+    //Mètode que permet finalitzar el joc retornant la puntuació
+    private void sortir() {
+        Bundle bundle = new Bundle();
+        bundle.putInt("puntuacio", puntuacio);
+        Intent intent = new Intent();
+        intent.putExtras(bundle);
+        pare.setResult(Activity.RESULT_OK, intent);
+        pare.finish();
     }
 }
