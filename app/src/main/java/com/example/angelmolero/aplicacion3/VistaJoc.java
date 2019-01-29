@@ -127,6 +127,14 @@ public class VistaJoc extends View implements SensorEventListener {
                 drawableAsteroide[i] = dAsteroide;
             }
 
+            /*//Gràfic vectorial Missil
+            ShapeDrawable dMissil = new ShapeDrawable();
+            dMissil.getPaint().setColor(Color.WHITE);
+            dMissil.getPaint().setStyle(Paint.Style.STROKE);
+            dMissil.setIntrinsicWidth(15);
+            dMissil.setIntrinsicHeight(3);
+            drawableMissil = dMissil;*/
+
         } else {
             drawableAsteroide[0] = context.getResources().getDrawable(R.drawable.asteroide1);
             drawableAsteroide[1] = context.getResources().getDrawable(R.drawable.asteroide2);
@@ -136,7 +144,7 @@ public class VistaJoc extends View implements SensorEventListener {
         }
 
         //Inicializar la variable drawableMissil
-        missil = new Grafic(this, drawableMissil);
+       // missil = new Grafic(this, drawableMissil);
         //Inicializar la variable nau
         nau = new Grafic(this, drawableNau);
         //Inicialitza els asteroides
