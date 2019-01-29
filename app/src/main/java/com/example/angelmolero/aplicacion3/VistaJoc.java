@@ -10,6 +10,7 @@ import android.graphics.Path;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.PathShape;
+import android.graphics.drawable.shapes.RectShape;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -125,14 +126,6 @@ public class VistaJoc extends View implements SensorEventListener {
                 dAsteroide.setIntrinsicHeight(50-i*14);
                 drawableAsteroide[i] = dAsteroide;
             }
-
-            //Gràfic vectorial Missil
-            ShapeDrawable dMissil = new ShapeDrawable();
-            dMissil.getPaint().setColor(Color.WHITE);
-            dMissil.getPaint().setStyle(Paint.Style.STROKE);
-            dMissil.setIntrinsicWidth(15);
-            dMissil.setIntrinsicHeight(3);
-            drawableMissil = dMissil;
 
         } else {
             drawableAsteroide[0] = context.getResources().getDrawable(R.drawable.asteroide1);
@@ -393,8 +386,19 @@ public class VistaJoc extends View implements SensorEventListener {
     }
 
     private void ActivaMissil() {
-        Drawable drawableMissie = this.context.getResources().getDrawable(R.drawable.missil1);
-        missil = new Grafic(this, drawableMissie);
+        Drawable drawableMissil;
+        if (pref.getString(getResources().getString(R.string.pa2_key), "1").equals("0")) {
+            //Gràfic vectorial Missil
+            ShapeDrawable dMissil = new ShapeDrawable(new RectShape());
+            dMissil.getPaint().setColor(Color.WHITE);
+            dMissil.getPaint().setStyle(Paint.Style.STROKE);
+            dMissil.setIntrinsicWidth(15);
+            dMissil.setIntrinsicHeight(3);
+            drawableMissil=dMissil;
+        } else {
+            drawableMissil = this.context.getResources().getDrawable(R.drawable.missil1);
+        }
+        missil = new Grafic(this, drawableMissil);
         missil.setCenX(nau.getCenX());
         missil.setCenY(nau.getCenY());
         missil.setAngle(nau.getAngle());
