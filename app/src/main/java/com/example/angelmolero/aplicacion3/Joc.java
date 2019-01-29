@@ -12,6 +12,7 @@ public class Joc extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.joc);
         vistaJoc = (VistaJoc)findViewById(R.id.VistaJoc);
+        vistaJoc.setPare(this);
     }
 
     @Override
