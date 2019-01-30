@@ -18,7 +18,13 @@ public class MagatzemPuntuacionsPreferencies implements MagatzemPuntuacions {
     public void guardarPuntuacio(int punts, String nom, long data) {
         SharedPreferences preferencies = context.getSharedPreferences(PREFERENCIES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferencies.edit();
-        editor.putString("puntuacio",punts+" "+nom);
+
+        for (int n=9; n>=1; n--) {
+            editor.putString("puntuacion" + n, preferencies.getString("puntuacio" + (n - 1), ""));
+        }
+
+        editor.putString("puntuacio0",punts+" "+nom);
+
         editor.commit();
     }
 
@@ -26,9 +32,16 @@ public class MagatzemPuntuacionsPreferencies implements MagatzemPuntuacions {
     public Vector<String> llistaPuntuacions(int quantitat) {
         Vector<String> result = new Vector<String>();
         SharedPreferences preferencies = context.getSharedPreferences(PREFERENCIES, Context.MODE_PRIVATE);
-        String s = preferencies.getString("puntuacio","");
+        /*String s = preferencies.getString("puntuacio","");
         if (s!="") {
             result.add(s);
+        }*/
+
+        for (int n = 0; n <= 9; n++) {
+            String s = preferencies.getString("puntuacion" + n, "");
+            if (!s.isEmpty()) {
+                result.add(s);
+            }
         }
         return result;
     }
