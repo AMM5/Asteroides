@@ -80,6 +80,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         }
 
         magatzem = new MagatzemPuntuacionsPreferencies(this);
+        magatzem = new MagatzemPuntuacionsFitxerIntern(this);
     }
 
     @Override
@@ -229,19 +230,19 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         super.onResume();
         Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
 
-       /* if (pref.getBoolean(getResources().getString(R.string.pa1_key), true)) {
+        if (pref.getBoolean(getResources().getString(R.string.pa1_key), true)) {
            // mp.start();
             startService(new Intent(MainActivity.this, ServeiMusica.class));
         } else {
            // mp.pause();
             stopService(new Intent(MainActivity.this, ServeiMusica.class));
-        }*/
+        }
     }
 
     @Override protected void onPause() {
         Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
         super.onPause();
-        //stopService(new Intent(MainActivity.this, ServeiMusica.class));
+        stopService(new Intent(MainActivity.this, ServeiMusica.class));
        // mp.pause();
     }
 

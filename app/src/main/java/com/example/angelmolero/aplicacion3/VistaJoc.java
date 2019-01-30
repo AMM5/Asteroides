@@ -276,6 +276,10 @@ public class VistaJoc extends View implements SensorEventListener {
                 }
             }
         }
+
+        for (Grafic asteroide: asteroides) {
+            if (asteroide.verificaColisio(nau)) sortir();
+        }
     }
 //GESTIÓ D'EVENTS DE SENSORS PER LA NAU
     @Override
