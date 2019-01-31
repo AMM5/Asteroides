@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.util.Vector;
 
 public class MagatzemPuntuacionsFitxerExtern implements MagatzemPuntuacions {
-    private static String FITXER = Environment.getExternalStorageDirectory()+"/puntuacions.txt";
+    private static String FITXER= Environment.getExternalStorageDirectory()+"/puntuacions.txt";
     private Context context;
 
     public MagatzemPuntuacionsFitxerExtern(Context context) {
@@ -45,7 +45,7 @@ public class MagatzemPuntuacionsFitxerExtern implements MagatzemPuntuacions {
                     n++;
                 }
             } while (n < quantitat && linia != null);
-                f.close();
+            f.close();
         } catch (Exception e) {
             Log.e("Asteroides", e.getMessage(), e);
         }

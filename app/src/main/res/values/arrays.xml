@@ -20,4 +20,18 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+
+    <string-array name="tipusAlmacenamiento">
+        <item>Interna</item>
+        <item>Externa</item>
+        <item>XML</item>
+        <item>JSON</item>
+    </string-array>
+
+    <string-array name="tipusAlmacenamientoValors">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

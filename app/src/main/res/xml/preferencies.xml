@@ -25,6 +25,13 @@
         android:key="@string/pa4_key"
         android:summary="@string/pa4_summary"
         android:title="@string/pa4_title" />
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/tipusAlmacenamiento"
+        android:entryValues="@array/tipusAlmacenamientoValors"
+        android:key="@string/pa5_key"
+        android:summary="@string/pa5_summary"
+        android:title="@string/pa5_title"/>
     <PreferenceCategory android:title="@string/multijugador_title">
 
         <CheckBoxPreference
