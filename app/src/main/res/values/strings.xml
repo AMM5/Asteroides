@@ -33,7 +33,7 @@
     <string name="pa4_title">Activar Sensores</string>
     <string name="pa4_key">sensores</string>
     <string name="pa4_summary">Activación de sensores</string>
-    <string name="pa5_title">Almacenamiento</string>
-    <string name="pa5_key">almacenaje</string>
-    <string name="pa5_summary">Elegir almacenamiento</string>
+    <string name="pa5_title">Almacenaje</string>
+    <string name="pa5_key">almacen</string>
+    <string name="pa5_summary">Guardar</string>
 </resources>

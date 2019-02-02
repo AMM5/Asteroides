@@ -265,6 +265,7 @@ public class VistaJoc extends View implements SensorEventListener {
             if(aux < 1){
                 missils.remove(i);
                 tempsMissils.remove(i);
+                break;
             }
             if(!missils.isEmpty()){
                 for (int u = 0; u < asteroides.size(); u++){

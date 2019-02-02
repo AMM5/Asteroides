@@ -79,8 +79,8 @@ public class MainActivity extends Activity implements View.OnClickListener, View
             stopService(new Intent(MainActivity.this, ServeiMusica.class));
         }
 
-        magatzem = new MagatzemPuntuacionsPreferencies(this);
-        magatzem = new MagatzemPuntuacionsFitxerIntern(this);
+       /* magatzem = new MagatzemPuntuacionsPreferencies(this);
+        magatzem = new MagatzemPuntuacionsFitxerIntern(this);*/
     }
 
     @Override
@@ -181,6 +181,31 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         return true;
     }
 
+    public void crearAlmacen() {
+        //pref = getSharedPreferences("com.example.angelmolero.asteroides_preferences", MODE_PRIVATE);
+
+        String sAlmacen = pref.getString(getResources().getString(R.string.pa5_key), "0");
+        int tipoAlmacen = Integer.valueOf(sAlmacen);
+
+        switch(tipoAlmacen) {
+            case 0: magatzem = new MagatzemPuntuacionsArray();
+               // Toast.makeText(MainActivity.this, "array", Toast.LENGTH_SHORT).show();
+                break;
+            case 1: magatzem = new MagatzemPuntuacionsPreferencies(this);
+                //    Toast.makeText(MainActivity.this, "preferencias", Toast.LENGTH_SHORT).show();
+                    break;
+            case 2: magatzem = new MagatzemPuntuacionsFitxerIntern(this);
+               // Toast.makeText(MainActivity.this, "interna", Toast.LENGTH_SHORT).show();
+                break;
+            case 3: magatzem = new MagatzemPuntuacionsFitxerExtern(this);
+               //  Toast.makeText(MainActivity.this, "externa", Toast.LENGTH_SHORT).show();
+                 break;
+            case 4: magatzem = new MagatzemPuntuacionsXML_SAX(this);
+               // Toast.makeText(MainActivity.this, "xml", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
     //Cada vegada que es selecciona el menú es crida el següent mètode
     //per què tracti els esdeveniments capturats.
     @Override
@@ -224,6 +249,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
     @Override protected void onStart() {
         super.onStart();
         Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
+        crearAlmacen();
     }
 
     @Override protected void onResume() {
@@ -237,6 +263,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
            // mp.pause();
             stopService(new Intent(MainActivity.this, ServeiMusica.class));
         }
+
     }
 
     @Override protected void onPause() {

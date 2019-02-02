@@ -22,10 +22,12 @@
     </string-array>
 
     <string-array name="tipusAlmacenamiento">
-        <item>Interna</item>
-        <item>Externa</item>
-        <item>XML</item>
-        <item>JSON</item>
+        <item>Almacen Array</item>
+        <item>Almacen Preferencias</item>
+        <item>Almacen Fichero Interna</item>
+        <item>Almacen Fichero Externa</item>
+        <item>Almacen Fichero XML</item>
+        <item>Almacen Fichero JSON</item>
     </string-array>
 
     <string-array name="tipusAlmacenamientoValors">
@@ -33,5 +35,7 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 </resources>
