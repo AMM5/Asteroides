@@ -206,6 +206,9 @@ public class MainActivity extends Activity implements View.OnClickListener, View
             case 5: magatzem = new MagatzemPuntuacionsGson();
                 // Toast.makeText(MainActivity.this, "xml", Toast.LENGTH_SHORT).show();
                 break;
+            case 6: magatzem = new MagatzemPuntuacionsJSon();
+                // Toast.makeText(MainActivity.this, "xml", Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 

@@ -27,6 +27,7 @@
         <item>Almacen Fichero Interna</item>
         <item>Almacen Fichero Externa</item>
         <item>Almacen Fichero XML</item>
+        <item>Almacen Fichero GSON</item>
         <item>Almacen Fichero JSON</item>
     </string-array>
 
@@ -37,5 +38,6 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
     </string-array>
 </resources>
